@@ -2,32 +2,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
-    <!-- Define project coordinates -->
+
     <groupId>com.example</groupId>
-    <artifactId>my-project</artifactId>
+    <artifactId>maven_project</artifactId>
     <version>1.0-SNAPSHOT</version>
-    
-    <!-- Define project metadata -->
-    <name>My Project</name>
-    <description>A simple Maven project</description>
-    <url>https://example.com</url>
-    
-    <!-- Define project dependencies -->
+    <packaging>war</packaging>
+
+    <name>maven_project</name>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
-        <!-- Add your dependencies here -->
-        <!-- Example: -->
-        <!-- <dependency>
-            <groupId>group-id</groupId>
-            <artifactId>artifact-id</artifactId>
-            <version>version</version>
-        </dependency> -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-    
-    <!-- Define build configuration -->
+
     <build>
         <plugins>
-            <!-- Define Maven compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -37,11 +35,10 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!-- Define Maven Surefire plugin for running tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
             </plugin>
         </plugins>
     </build>
